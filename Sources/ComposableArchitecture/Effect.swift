@@ -309,7 +309,9 @@ extension ObservableConvertibleType {
   ///
   /// - Returns: An effect that wraps `self`.
   public func catchToEffect() -> Effect<Result<Element, Error>> {
-    self.map(Result<Element, Error>.success)
+    self
+      .asObservable()
+      .map(Result<Element, Error>.success)
       .catchError { Observable<Result<Element, Error>>.just(Result.failure($0)) }
       .eraseToEffect()
   }
