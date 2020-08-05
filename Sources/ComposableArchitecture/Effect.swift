@@ -280,7 +280,7 @@ extension Effect where Output == Never {
   }
 }
 
-extension ObservableType {
+extension ObservableConvertibleType {
   /// Turns any publisher into an `Effect`.
   ///
   /// This can be useful for when you perform a chain of publisher transformations in a reducer, and
