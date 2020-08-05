@@ -21,6 +21,7 @@ extension Reducer {
   ///   - prefix: A string to print at the beginning of the formatted message for the signpost.
   ///   - log: An `OSLog` to use for signposts.
   /// - Returns: A reducer that has been enhanced with instrumentation.
+  @available(iOS 12.0, *)
   public func signpost(
     _ prefix: String = "",
     log: OSLog = OSLog(
@@ -55,6 +56,7 @@ extension Reducer {
 }
 
 extension ObservableType {
+  @available(iOS 12.0, *)
   func effectSignpost(
     _ prefix: String,
     log: OSLog,
